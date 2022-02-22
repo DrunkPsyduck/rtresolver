@@ -1,0 +1,27 @@
+  
+<div class="aside">
+    <form method="post" >
+        <label >url</label>
+        <input #cajaurl class="form-control"/>
+        <br/>
+       
+        <input value="Add" placeholder="Añadir" type="button" class="btn btn-success" (click)="Add()"/>
+        <input value="Buscar" type="button" class="btn btn-success" (click)="Submit()"/>
+    </form>
+    <button class="" (click)="Add()">Añadir</button>
+<div>
+    <ul *ngIf="urls!== undefined">
+        <li *ngFor="let url of urls">
+            <a href="url"target='blank'>{{url}}</a>
+        </li>
+    </ul>
+</div><div>
+    <h3>urlsNuevas</h3>
+    <ul *ngIf="urlsNuevas!== undefined">
+        <li *ngFor="let url of urlsNuevas">
+            <a href="{{url}}" target='blank'>{{url}}</a>
+            <button value="urlId" (click)="GetVideoFromAPI(url)">Descargar</button>
+        </li>
+    </ul>
+</div>
+</div>
